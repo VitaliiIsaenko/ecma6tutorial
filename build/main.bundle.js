@@ -1,15 +1,2 @@
-var calculateMonthlyPayment = function (principal, years, rate) {
-    if (rate) {
-        var monthlyRate = rate / 100 / 12;
-    }
-    var monthlyPayment = principal * monthlyRate / (1 - Math.pow(1 / (1 + monthlyRate), years * 12));
-    return monthlyPayment;
-};
-
-document.getElementById('calcBtn').addEventListener('click', function () {
-    var principal = document.getElementById("principal").value;
-    var years = document.getElementById("years").value;
-    var rate = document.getElementById("rate").value;
-    var monthlyPayment = calculateMonthlyPayment(principal, years, rate);
-    document.getElementById("monthlyPayment").innerHTML = monthlyPayment.toFixed(2);
-});
+!function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:r})},n.r=function(t){Object.defineProperty(t,"__esModule",{value:!0})},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=0)}([function(t,e,n){"use strict";var r=function(t,e,n){for(var r=function(t,e,n){var r=0;return n&&(r=n/100/12),{principal:t,years:e,rate:n,monthlyPayment:t*r/(1-Math.pow(1/(1+r),12*e)),monthlyRate:r}}(t,e,n),o=r.monthlyRate,a=r.monthlyPayment,l=t,u=[],c=0;c<e;c++){for(var i=0,m=0,y=0;y<12;y++){var d=l+a;i+=d,m+=m,l-=a-d}u.push({principalY:m,interestY:i,balance:l})}return{monthlyPayment:a,monthlyRate:o,amortization:u}};document.getElementById("calcBtn").addEventListener("click",function(){var t=document.getElementById("principal").value,e=document.getElementById("years").value,n=document.getElementById("rate").value,o=r(t,e,n),a=o.monthlyPayment,l=o.monthlyRate,u=o.amortization;document.getElementById("monthlyPayment").innerHTML=a.toFixed(2),document.getElementById("monthlyRate").innerHTML=(100*l).toFixed(2),u.forEach(function(t){return console.log(t)})})}]);
+//# sourceMappingURL=main.bundle.js.map
